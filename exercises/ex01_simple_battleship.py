@@ -3,30 +3,55 @@
 __author__ = "760671788"
 
 secret_location = int(input("Pick a secret boat location between 1 and 4: "))
-
+if secret_location > 4: 
+    print("Error! " + str(secret_location) + " too high")
+    exit()
+if secret_location < 1:
+    print("Error! " + str(secret_location) + " too low!")
+    exit()
 number = int(input("Guess a number between 1 and 4: "))
+if number > 4: 
+    print("Error! " + str(number) + " too high")
+    exit()
+if number < 1:
+    print("Error! " + str(number) + " too low!")
+    exit()
+BLUE_BOX: str = "\U0001F7E6"
+RED_BOX: str = "\U0001F7E5"
+WHITE_BOX: str = "\U00002B1C"
 
-# Check if the input is valid (between 1 and 4)
-if 1 <= secret_location <= 4:
-    # If valid, exit the program without printing anything
-    pass
-else:
-    # If invalid, print an error message depending on number
-    if secret_location > 4: 
-        print("Error! " + str(secret_location) + " too high")
-    if secret_location < 1:
-        print("Error! " + str(secret_location) + " too low!")
-#do this for number(player 2) as well
-if 1 <= number <= 4:
-    pass
-else:
-    if number > 4: 
-        print("Error! " + str(number) + " too high")
-    if number < 1:
-        print("Error! " + str(number) + " too low!")
+digit_1: str = BLUE_BOX
+digit_2: str = BLUE_BOX
+digit_3: str = BLUE_BOX
+digit_4: str = BLUE_BOX 
 
+if number == 1:
+    if number != secret_location:
+        digit_1 = WHITE_BOX
+    if number == secret_location:
+        digit_1 = RED_BOX
 
-if number == secret_location: 
+if number == 2:
+    if number != secret_location:
+        digit_2 = WHITE_BOX
+    if number == secret_location:
+        digit_2 = RED_BOX
+
+if number == 3:
+    if number != secret_location:
+        digit_3 = WHITE_BOX
+    if number == secret_location:
+        digit_3 = RED_BOX
+
+if number == 4:
+    if number != secret_location:
+        digit_4 = WHITE_BOX
+    if number == secret_location:
+        digit_4 = RED_BOX
+
+print(digit_1 + digit_2 + digit_3 + digit_4)
+
+if number == secret_location:
     print("Correct! You hit the ship.")
-else: 
+else:
     print("Incorrect! You missed the ship.")
