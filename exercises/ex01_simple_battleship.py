@@ -2,14 +2,14 @@
 
 __author__ = "760671788"
 
-secret_location = int(input("Pick a secret boat location between 1 and 4: "))
+secret_location: int = int(input("Pick a secret boat location between 1 and 4: "))
 if secret_location > 4: 
     print("Error! " + str(secret_location) + " too high")
     exit()
 if secret_location < 1:
     print("Error! " + str(secret_location) + " too low!")
     exit()
-number = int(input("Guess a number between 1 and 4: "))
+number: int = int(input("Guess a number between 1 and 4: "))
 if number > 4: 
     print("Error! " + str(number) + " too high")
     exit()
