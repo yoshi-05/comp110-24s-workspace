@@ -1,0 +1,16 @@
+"""Demonstrates Functions"""
+
+from random import randint
+
+
+
+y: str = print("Hello")
+
+print(y)
+
+x: int = round(10.25)
+
+print(x + 1)
+
+z: int =  randint(1,7)
+print(z)
