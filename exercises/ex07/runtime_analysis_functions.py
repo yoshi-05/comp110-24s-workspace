@@ -1,13 +1,24 @@
 import numpy as np
 import timeit
 import tracemalloc
+from random import randint
 
 MAX_VAL: int = 10 ** 5
 
+
 def random_descending_list(n: int) -> list[int]:
     """Generate a list of random descending integers."""
+    list_length: int = n 
     new_list: list[int] = []
+    new_list.append(MAX_VAL)
+    current_element = MAX_VAL
+    Lowest_val: int = -10 ** 6
+    for idx in range(1, n):
+        next_num = randint(Lowest_val, current_element)
+        new_list.append(next_num)
+        current_element = next_num
     return new_list
+
 
 def evaluate_runtime(fn_name, start_size: int, end_size: int) -> np.array:
     """Evaluate the runtime for different size inputs."""
@@ -22,6 +33,7 @@ def evaluate_runtime(fn_name, start_size: int, end_size: int) -> np.array:
         times.append(result/NUM_TRIALS)
     print(f"Runtime of {fn_name} for input of size {end_size}: {round(result/NUM_TRIALS, 2)} seconds")
     return np.array(times)
+
 
 def evaluate_memory_usage(fn_name, start_size: int, end_size: int):
     from exercises.ex07.sort_functions import selection_sort, insertion_sort

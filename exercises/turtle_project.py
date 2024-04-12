@@ -1,4 +1,4 @@
-"""Depiction of an Archery Target with Hit Points!"""
+"""Depiction of an Archery Target with Hit Points! Hits were drawn twice, on lines 17 and 18 in the main function at different coordinates. My circles, lines 1-16, were each filled individually. The marker color of the hits were green, as indicated on line 120."""
  
 __author__ = "730671788"
  
